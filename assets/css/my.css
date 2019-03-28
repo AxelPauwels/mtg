@@ -1,0 +1,1216 @@
+:root {
+    --colorDefault: #f9f9f9;
+    --colorPrimary: #428bca;
+    --colorInfo: #5bc0de;
+    --colorSuccess: #5cb85c;
+    --colorWarning: #ED9F35;
+    --colorDanger: #d9534f;
+    --colorPrimaryLighter: #609dd2;
+
+    --colorGrayLight: #BBB;
+    --colorGray: #999;
+    --colorGrayDark: #777;
+    --colorNavLight: #333;
+    --colorNav: #222;
+    --colorDowloadGreen: #4AAF46;
+    --colorDowloadOrange: #ED9F35;
+
+    --colorMTGLight: #F59512;
+    --colorMTG: #EC5F14;
+    --colorMTGDark: #EA4914;
+
+    --darkOpacityLight: rgba(0, 0, 0, 0.25);
+    --darkOpacity: rgba(0, 0, 0, 0.50);
+    --darkOpacityDark: rgba(0, 0, 0, 0.75);
+
+    --lightOpacityLightExtra: rgba(255, 255, 255, 0.12);
+    --lightOpacityLight: rgba(255, 255, 255, 0.25);
+    --lightOpacity: rgba(255, 255, 255, 0.50);
+    --lightOpacityDark: rgba(255, 255, 255, 0.75);
+
+    --font-family-thin: Roboto-Thin, sans-serif;
+    --font-family-light: Roboto-Light, sans-serif;
+    --font-family-regular: Roboto-Regular, sans-serif;
+}
+
+@font-face {
+    font-family: 'Roboto-Regular';
+    src: url('../fonts/Roboto-Regular.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Light';
+    src: url('../fonts/Roboto-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: 'Roboto-Thin';
+    src: url('../fonts/Roboto-Thin.ttf') format('truetype');
+}
+
+/*ALGEMEEN CUSTOM SETTINGS -------------------------------------------*/
+.hideElement{
+    display: none;
+}
+
+
+/*input field transparent*/
+input.customInput {
+    color: var(--colorGrayLight);
+    background-color: transparent !important;
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+    border-radius: 0px !important;
+    outline: none !important;
+}
+
+input.customInput.grayline {
+    border-bottom: 1px solid var(--colorGrayLight) !important;
+}
+
+input.customInput.graylineCenter {
+    text-align: center;
+    border-bottom: 1px solid var(--colorGrayLight) !important;
+}
+
+input.customInput:hover,
+input.customInput:focus,
+input.customInput:active {
+    color: var(--colorMTGDark) !important;
+    border-radius: 0px !important;
+    outline: none !important;
+    box-shadow: none !important;
+    border-bottom: 1px solid var(--colorMTG) !important;
+}
+
+input.customInput:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 35px var(--colorNav) inset;
+    -webkit-text-fill-color: var(--colorMTG) !important;
+    border-bottom: 1px solid var(--colorNav) !important;
+}
+
+.customInputGroup span.input-group-addon {
+    background-color: transparent !important;
+    border: none !important;
+    padding-bottom: 1px !important;
+}
+
+.customInputGroup .input-group-addon i {
+    background-color: transparent !important;
+    color: var(--colorGrayLight);
+}
+
+/*dropdown transparent*/
+select.customDropdown {
+    -webkit-appearance: none;
+    color: var(--colorGrayLight);
+    background-color: transparent !important;
+    border-radius: 0 !important;
+    border-bottom-right-radius: 0px !important;
+    border: none !important;
+    border-bottom: 1px solid transparent !important;
+
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+select.customDropdown:focus,
+select.customDropdown:hover,
+select.customDropdown:active {
+    color: var(--colorMTGDark) !important;
+    border-bottom: 1px solid var(--colorMTG) !important;
+}
+
+/*input submit (button)*/
+input.customInputSubmit,
+button.customInputSubmit {
+    padding: 0;
+    width: 100%;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--colorMTGLight) !important;
+    background-color: transparent !important;
+    border: none;
+    border-radius: 0 !important;
+    opacity: 0.8 !important;
+    text-shadow: 0.5px 0.5px black !important;
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+input.customInputSubmit:hover,
+input.customInputSubmit:focus,
+input.customInputSubmit:active,
+button.customInputSubmit:hover,
+button.customInputSubmit:focus,
+button.customInputSubmit:active {
+    color: var(--colorMTGLight) !important;
+    background-color: var(--darkOpacityDark) !important;
+    /*font-size: 20px;*/
+    /*border:1px solid var(--colorMTGLight);*/
+    /*border-left: none;*/
+    /*border-right: none;*/
+
+}
+
+/*BASIC LAYOUT ----------------------------------------------------*/
+body {
+    font-family: var(--font-family-thin);
+    padding: 0;
+    margin: 0;
+    /*background: radial-gradient(ellipse at top, rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.35)), url('http://localhost/mtg/assets/images/mtg_background.jpg');*/
+    background: radial-gradient(ellipse at top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.45)), url('http://axelpauwels.onthewifi.com/mtg/assets/images/mtg_background.jpg');
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-attachment: fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+body::-webkit-scrollbar {
+    width: 0px;
+}
+
+header {
+    background-color: rgba(0, 0, 0, 0.9);
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    top: 0;
+    height: 40px;
+    z-index: 99999;
+}
+
+#content {
+    /*min-height: 90vh;*/
+    /*background-color: gray;*/
+    padding-top: 25px;
+    margin: 0;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    /*padding-bottom: 25px;*/
+}
+
+footer {
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    margin: 0;
+    bottom: 2px;
+    /*height: 35px;*/
+    z-index: 99999;
+    color: lightgray;
+    font-size: 12px;
+    padding-right: 10px;
+    font-style: italic;
+    text-shadow: 0.5px 0.5px black;
+}
+
+/*FOOTER ----------------------------------------------------*/
+footer .svg-inline--fa.fa-connectdevelop {
+    vertical-align: -.250em;
+    padding-left: 2px;
+    padding-right: 2px;
+}
+
+/*NAVIGATION ----------------------------------------------------*/
+.nav a {
+    color: var(--colorMTG);
+}
+
+.nav a:hover,
+.nav a:active {
+    color: var(--colorMTGLight);
+}
+
+img.userIcon {
+    height: 34px;
+    width: 34px;
+    border-radius: 50px;
+    margin-top: 3px;
+    margin-left: 10px;
+}
+
+img.homeIcon {
+    height: 44px;
+}
+
+#homeImage.nav-link,
+#logoutButton.nav-link {
+    padding: 0px;
+    margin-right: 4px;
+}
+
+/*dropdown*/
+header .dropdown-menu {
+    margin-top: 0;
+    background-color: black;
+    text-align: right;
+    border: 1px solid var(--colorNav);
+    width: 175px;
+    /*margin-left: -20px;*/
+}
+
+header .dropdown-divider {
+    border-color: var(--lightOpacityLightExtra);
+}
+
+header .dropdown-item:hover,
+header .dropdown-item:focus,
+header .dropdown-item:active {
+    background-color: transparent;
+}
+
+/*INLOG MODAL ---------------------------------------------------*/
+#loginModal div.modal-content {
+    background-color: var(--darkOpacityDark);
+    border: 1px solid var(--colorNav);
+}
+
+#loginModal #div_submitButton {
+    text-align: center;
+    margin-top: 10px;
+}
+
+#loginModal #div_submitButton input:hover {
+    color: var(--colorMTGDark) !important;
+}
+
+#loginModal.fade {
+    /*-webkit-transition:  all 2.25s ease;*/
+    /*-moz-transition:  all 2.25s ease;*/
+    /*-ms-transition:  all 2.25s ease;*/
+    /*-o-transition:  all 2.25s ease;*/
+    /*transition:  all 2.25s ease;*/
+}
+
+/*INDEX PAGE ---------------------------------------------------*/
+form#form_searchCard {
+    padding: 15px;
+    background-color: var(--darkOpacity);
+    margin-top: 5px;
+    border-top: 1px solid var(--colorMTG);
+}
+
+/*search container*/
+div.container.container_searchCards {
+    margin-top: -30px;
+}
+
+.container_searchCards input.customInput::placeholder,
+.container_searchCards input.customDropdown::placeholder {
+    color: var(--colorMTGDark);
+}
+
+.container_searchCards input.customInput,
+.container_searchCards select.form-control:not([size]):not([multiple]) {
+    color: var(--colorMTGDark);
+    font-size: 18px;
+    padding-bottom: 5px;
+}
+
+.container_searchCards .fa-plus-square,
+.container_searchCards .fa-minus-square {
+    color: var(--colorMTGDark);
+    margin-top: 11px;
+}
+
+.fa-plus-square:hover,
+.fa-minus-square:hover {
+    cursor: pointer;
+}
+
+.container_searchCards div.showAdvancedSearch {
+    display: none;
+}
+
+.container_searchCards .form-group {
+    margin: 0;
+}
+
+.container_advancedSearch {
+    margin-top: 15px;
+}
+
+.container_advancedSearch > div p {
+    color: var(--colorMTG);
+    padding-left: 10px;
+    margin-bottom: 0;
+    border-bottom: 1px solid var(--colorMTG);
+}
+
+/*hovereffects in cardtable*/
+.advancedSearch_hoverColor,
+.cardsTable_hoverColor {
+    color: var(--colorMTGLight) !important;
+    text-shadow: none !important;
+}
+
+.cardsTable_hoverColor td {
+    background-color: var(--darkOpacity);
+}
+
+.cardsTable_hoverColor img {
+    opacity: 0.50;
+}
+
+/**
+ * Checkbox layout
+ */
+.container_searchCards .checkboxSpecialLayout {
+    /*width: 120px;*/
+    /*height: 40px;*/
+    border-radius: 50px;
+    position: relative;
+}
+
+.container_searchCards .checkboxSpecialLayout span {
+    color: var(--colorGrayLight);
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: 110px;
+}
+
+/**
+ * Create the line for the circle to move across
+ */
+.container_searchCards .checkboxSpecialLayout:before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 14px;
+    height: 2px;
+    width: 90px;
+    background: var(--lightOpacityLight);
+}
+
+/**
+ * Create the circle to click
+ */
+.container_searchCards .checkboxSpecialLayout label {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    left: 12px;
+    background: #444;
+}
+
+/**
+ * Create the click event for the checkbox
+ */
+.container_searchCards .checkboxSpecialLayout input[type=checkbox]:checked + label {
+    left: 84px;
+    background: var(--colorMTGLight);
+}
+
+.container_searchCards input#submit_addCard {
+    text-align: right;
+}
+
+/*resultaat table*/
+.resultSummary_CountAndPrice {
+    color: var(--colorGrayLight);
+}
+
+.resultSummary_CountAndPrice p {
+    margin-top: 0;
+    padding-left: 25px;
+    padding-bottom: 8px;
+    background-color: var(--darkOpacity);
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+#cardsTable {
+    background-color: var(--darkOpacity);
+    color: var(--colorGrayLight);
+    overflow-x: scroll;
+}
+
+#cardsTable thead {
+    color: var(--colorMTGDark);
+    background-color: var(--darkOpacityDark);
+    border-top: 1px solid var(--colorMTG);
+}
+
+#cardsTable th {
+    border: none;
+    outline: none !important;
+    cursor: ns-resize;
+}
+
+#cardsTable td {
+    border: none;
+    padding: 0;
+    line-height: 3;
+}
+
+#cardsTable tr th:first-of-type,
+#cardsTable tr td:first-of-type {
+    text-align: center;
+    width: 50px;
+}
+
+#cardsTable tr th:nth-of-type(2),
+#cardsTable tr td:nth-of-type(2) {
+    width: 230px
+}
+
+#cardsTable tr th:nth-of-type(4),
+#cardsTable tr td:nth-of-type(4) {
+    width: 200px
+}
+
+/*Quantity kolombreedte*/
+#cardsTable tr th:nth-of-type(3),
+#cardsTable tr th:nth-of-type(5),
+#cardsTable tr th:nth-of-type(7),
+#cardsTable tr th:nth-of-type(8),
+#cardsTable tr td:nth-of-type(3),
+#cardsTable tr td:nth-of-type(5),
+#cardsTable tr td:nth-of-type(7),
+#cardsTable tr td:nth-of-type(8) {
+    width: 50px;
+    text-align: center;
+}
+
+#cardsTable tr th:last-of-type,
+#cardsTable tr td:last-of-type {
+    text-align: center;
+}
+
+.imgOwner {
+    width: 35px;
+    height: 35px;
+    border-radius: 50px;
+    margin: 0 10px 0 10px;
+}
+
+.imgCard {
+    height: 42px;
+    width: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+
+/*setIcon*/
+#cardsTable i.ss {
+    /*font-size: 1.2em;*/
+    margin-bottom: 3px;
+    text-shadow: 0px 0px 5px black;
+}
+
+#cardsTable i.ss.iconShadow {
+    text-shadow: 0px 0px 5px white;
+}
+
+/*image inDeck en foil*/
+td:nth-of-type(7),
+td:nth-of-type(8) {
+    position: relative;
+}
+
+.inDeckImage {
+    position: absolute;
+    width: 25px;
+    height: auto;
+    opacity: 0.7;
+    top: 10px;
+    left: 12px;
+}
+
+p.quantityDeck_displayNumber {
+    display: inline-block;
+    position: absolute;
+    top: 8px;
+    left: 30px;
+    color: black;
+    font-family: monospace, sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.5;
+    padding-left: 1px;
+    height: 15px;
+    width: 15px;
+    background-color: var(--colorGrayLight);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+.foilImage {
+    position: absolute;
+    width: 40px;
+    height: auto;
+    top: 16px;
+    left: 4px;
+}
+
+p.quantityFoil_displayNumber {
+    display: inline-block;
+    position: absolute;
+    top: 9px;
+    left: 28px;
+    color: black;
+    font-family: monospace, sans-serif;
+    font-size: 10px;
+    font-weight: 900;
+    line-height: 1.5;
+    padding-left: 1px;
+    height: 15px;
+    width: 15px;
+    background-color: var(--colorGrayLight);
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    border-radius: 50%;
+}
+
+p.quantityFoil_displayPrice {
+    display: inline-block;
+    position: absolute;
+    top: 25px;
+    left: 10px;
+    color: var(--colorGrayLight);
+    font-size: 8px;
+    width: 35px;
+    height: auto;
+}
+
+/*CARDDETAIL MODAL ---------------------------------------------------*/
+
+/*modal*/
+/*stel breedte van de modal in*/
+@media (min-width: 576px) {
+    #cardDetailModal .modal-dialog {
+        max-width: 75% !important;
+    }
+}
+
+/*bovenste margin*/
+#cardDetailModal {
+    margin-bottom: -25px;
+
+}
+
+/*bovenste padding en totale hoogte*/
+#cardDetailModal_resultaat {
+    padding-top: 10px;
+    min-height: 465px;
+    max-width: 1000px;
+}
+
+/*disable scrollbar for whole modal*/
+#cardDetailModal::-webkit-scrollbar {
+    width: 0px;
+}
+
+/*background-color als rgba-opactity instellen (transparent gaat nooit bij modals) */
+#cardDetailModal {
+    /*TODO:INSTELLEN ALS TRANSPARENT EFFECT, EN HIERONDER VERWIJDEREN IN DE VOLGENDE CSS SECTIE*/
+    /*background-color: rgba(0,0,0,0.95);*/
+}
+
+#cardDetailModal,
+#cardDetailModal div.modal-body,
+#cardDetailModal div.modal-content {
+    background-color: black;
+    cursor: default;
+}
+
+#cardDetailModal div.modal-body {
+    margin-left: 6px;
+    margin-right: 6px;
+    /*background-color: red;*/
+}
+
+/*closeButton cross*/
+#cardDetailModal button.close {
+    opacity: 1;
+    font-size: 50px;
+    color: var(--colorMTGLight);
+    text-shadow: none;
+    outline: none;
+}
+
+#cardDetailModal button.close:hover {
+    opacity: 1;
+    color: var(--colorMTGDark);
+}
+
+#cardDetailModal div#cardImage {
+    text-align: center;
+}
+
+#cardDetailModal div#cardImage img {
+    border: 1px solid var(--colorNavLight);
+    border-radius: 12px;
+    /*margin-top: 65px;*/
+    margin-top: 10px;
+    margin-bottom: 25px;
+}
+
+/*tabs*/
+#tabsContainer .nav-tabs {
+    border-bottom: none;
+}
+
+#tabsContainer li a {
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+#tabsContainer li:hover a {
+    border: none;
+    border-bottom: 2px solid var(--colorMTGLight);
+}
+
+#tabsContainer li a.active {
+    border: none;
+    background-color: transparent;
+    border-bottom: 2px solid var(--colorMTGLight);
+    color: var(--colorMTGLight);;
+}
+
+#tabsContainer .tab-content {
+    padding-top: 20px;
+    padding-left: 14px;
+    color: var(--colorGrayLight);
+    font-size: 12px;
+    font-family: var(--font-family-thin);
+}
+
+#tabsContainer .tab-content table td {
+    border: none;
+    text-align: left;
+}
+
+#tabsContainer .tab-content table td:first-of-type {
+    /*width: 125px;*/
+    /*color:var(--colorGray);*/
+    width: 102px;
+    font-size: 10px;
+    padding-top: 6px;
+}
+
+#tabsContainer .tab-content table td:nth-of-type(2) {
+    max-width: 220px;
+    /*overflow-x: hidden;*/
+}
+
+/*setIcon*/
+#tabsContainer i.ss {
+    /*margin-bottom: 3px;*/
+    margin-top: -8px;
+    margin-left: -3px;
+    font-size: 1.5em;
+    text-shadow: 0px 0px 1px black;
+}
+
+#tabsContainer i.ss.iconShadow {
+    text-shadow: 0px 0px 1px white !important;
+}
+
+#tabsContainer #cmcSpan {
+    display: inline-block;
+    margin-left: 8px;
+}
+
+/*manacost ColorIcoontjes maken*/
+#tabsContainer .manacolorIcon {
+    display: inline-block;
+    height: 14px;
+    width: 14px;
+    margin: 1px;
+    margin-bottom: 3px;
+}
+
+#tabsContainer .customManacolorIcon {
+    display: inline-block;
+    color: black;
+    background-color: #CBC1C0;
+    border-radius: 50%;
+    height: 14.25px;
+    width: 14.25px;
+    margin: 1px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 1.15;
+    letter-spacing: -2px;
+    padding-right: 2.6px;
+    font-family: "Adobe Fangsong Std";
+}
+
+#tabsContainer .manacolorIcon_inOriginalText {
+    display: inline-block;
+    height: 12px;
+    width: 12px;
+    margin: 1px;
+    border-radius: 50%;
+    margin-bottom: 3px;
+}
+
+#tabsContainer .customManacolorIcon_inOriginalText {
+    display: inline-block;
+    color: black;
+    background-color: #CBC1C0;
+    border-radius: 50%;
+    height: 12px;
+    width: 12px;
+    margin: 1px;
+    text-align: center;
+    font-weight: 900;
+    line-height: 0.9;
+    letter-spacing: -2px;
+    padding-right: 2.6px;
+    font-family: "Adobe Fangsong Std";
+}
+
+/*foilimage and price*/
+#cardDetailModal div.cardDetail_quantity_priceDisplayContainer {
+    position: relative;
+}
+
+#cardDetailModal .cardDetail_quantity_priceDisplay {
+    display: inline;
+    position: absolute;
+    width: 50px;
+    left: 30px;
+}
+
+#cardDetailModal img.cardDetail_quantity_foilImage {
+    position: absolute;
+    left: 100px;
+    top: 2px;
+    width: 33px;
+    height: auto;
+}
+
+/*OWNER SECTION*/
+#tabsContainer .quantityIcons {
+    /*margin-right:10px;*/
+    display: inline-block;
+    font-size: 1.25em;
+    /*margin-top:-2px;*/
+}
+
+#tabsContainer .quantityIcons:hover {
+    cursor: pointer;
+}
+
+#tabsContainer #minusIcon {
+    color: var(--colorDanger);
+}
+
+#tabsContainer #plusIcon {
+    color: var(--colorSuccess);
+
+}
+
+#tabsContainer .quantityIcons_text {
+    display: inline-block;
+    margin: 6px;
+    font-size: 1.2em;
+}
+
+#tabsContainer #tabContent_owner input#selected_price,
+#tabsContainer #tabContent_owner input#selected_priceFoil {
+    text-align: left;
+    padding: 0;
+    margin-left: -2px;
+    font-size: 12px;
+}
+
+#tabsContainer #tabContent_owner select {
+    background-color: transparent;
+    outline: none;
+    margin-left: -10px;
+    border: none;
+    color: var(--colorGrayLight);
+    width: 100px;
+}
+
+#tabsContainer #tabContent_owner select#selected_isInDeck {
+    margin-top: 6px;
+}
+
+#tabsContainer #tabContent_owner select#selected_owner {
+    margin-top: 0px;
+}
+
+/*#tabsContainer #tabContent_owner tr:nth-of-type(3) td,*/
+#tabsContainer #tabContent_owner tr:nth-of-type(6) td:nth-of-type(1) {
+    padding-top: 42px;
+}
+
+#tabsContainer #tabContent_owner tr:nth-of-type(6) td:nth-of-type(2) {
+    padding-top: 40px;
+}
+
+#tabsContainer #tabContent_owner tr:nth-of-type(5) td:first-of-type {
+    line-height: 1.6;
+}
+
+/*images relative en absoluut*/
+#tabsContainer div.owner_quantityFoilImageContainer,
+#tabsContainer div.owner_quantityDeckImageContainer {
+    position: relative;
+}
+
+#tabsContainer img.owner_quantityFoilImage {
+    position: absolute;
+    top: -13px;
+    left: 52px;
+    width: 25px;
+    height: auto;
+}
+
+#tabsContainer img.owner_quantityDeckImage {
+    position: absolute;
+    top: -19px;
+    left: 56px;
+    width: 17px;
+    height: auto;
+    opacity: 0.9;
+}
+
+/*deleteButton*/
+#tabsContainer #tabContent_owner #selected_deleteCard {
+    margin-left: -6px;
+    border: none;
+    color: var(--colorMTGDark);
+    font-weight: 900;
+    outline: none;
+    background-color: transparent;
+    display: inline-block;
+    text-align: right;
+}
+
+/*pointer*/
+#tabsContainer #tabContent_owner input,
+#tabsContainer #tabContent_owner select,
+#tabsContainer #tabContent_owner button {
+    cursor: pointer;
+}
+
+/*ADD CARDS ----------------------------------------------------*/
+div#content.container_addCard {
+    /*horizontal center container*/
+    width: 100%;
+    height: 360px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+}
+
+.container_addCard > div {
+    min-height: 325px;
+    text-align: center;
+    padding-left:3%;
+}
+
+.container_addCard img {
+    height: 100%;
+    border-radius: 15px;
+    -webkit-filter: brightness(100%) contrast(110%); /* Safari 6.0 - 9.0 */
+    filter: brightness(100%) contrast(110%);
+}
+
+.container_addCard #copyIconContainer {
+    margin-top: -20px;
+    margin-bottom: 20px;
+}
+
+.container_addCard span#copyIcon {
+    display: inline-block;
+    float: left;
+    margin-top: 5px;
+    margin-left: 15px;
+    color: var(--colorMTGLight);
+    font-size: 22px;
+}
+
+.container_addCard span#copyIcon:hover {
+    cursor: pointer;
+}
+
+.container_addCard span#copyIcon:active {
+    color: var(--colorMTGDark);
+}
+
+/*form*/
+.container_addCard input{
+    text-align: left;
+    color: var(--colorMTGDark);
+}
+
+.container_addCard #inputCardnameContainer > div {
+    padding-left: 0px;
+    padding-right: 0px;
+}
+
+.container_formAddCard {
+    /*relative voor de dropdowns foil en inDeck*/
+    position: relative;
+}
+
+.container_addCard input::-webkit-input-placeholder {
+    color: var(--colorGrayLight);
+}
+
+.container_addCard #exactNameContainer {
+    margin-bottom: 0;
+    padding-top: 5px;
+    text-align: right;
+}
+
+.container_addCard #exactNameContainer label {
+    font-size: 10px;
+    padding-top: 8px;
+}
+
+.container_addCard form#form_addCard {
+    padding: 25px;
+    background-color: var(--darkOpacity);
+    height: 100%;
+}
+
+.container_addCard form#form_addCard div > div {
+    width: 100%;
+}
+
+.container_addCard form#form_addCard div > div.checkboxSpecialLayout {
+    width: 120px;
+    text-align: left;
+}
+
+.container_addCard form#form_addCard div > div.container_fontAwesomeIcon {
+    width: 15px;
+}
+
+ul#dropdownName.dropdown-menu.ulName.show {
+    -webkit-transform: none !important;
+    -moz-transform: none !important;
+    -ms-transform: none !important;
+    -o-transform: none !important;
+    transform: none !important;
+    overflow-y: auto;
+    color: var(--colorMTGDark);
+    margin-top: 54px;
+    text-align: left;
+    max-height: 275px;
+    width: 133%;
+    background-color: transparent !important;
+    border: none !important;
+    /*left:-10px !important;*/
+    top: -25px !important;
+    /*margin-left: 27%;*/
+}
+
+/* width */
+ul#dropdownName.dropdown-menu.ulName.show::-webkit-scrollbar {
+    width: 0px;
+}
+
+ul#dropdownName.dropdown-menu.ulName.show li {
+    cursor: pointer;
+    background-color: var(--darkOpacityDark);
+    padding-left: 5px;
+}
+
+ul#dropdownName.dropdown-menu.ulName.show li:hover {
+    color: var(--colorMTGLight);
+}
+
+/*icons*/
+.container_addCard .container_fontAwesomeIcon {
+    padding-left: 0;
+    padding-top: 8px;
+    color: var(--colorGrayLight);
+}
+
+.container_addCard .container_fontAwesomeIcon.locked {
+    color: var(--colorMTGDark);
+}
+
+.container_addCard .container_fontAwesomeIcon:hover {
+    cursor: pointer;
+}
+
+/*dropdown first option*/
+.container_addCard select:invalid,
+.container_addCard select option[value=""] {
+    color: var(--colorGrayLight) !important;
+    font-style: italic;
+}
+
+/*Added for browser compatibility*/
+/*[hidden] {*/
+/*display: none;*/
+/*}*/
+
+/*checkbox*/
+.container_addCard label {
+    color: var(--colorGrayLight);
+}
+
+/*dropdown selected_numberOfCards*/
+.container_formAddCard #inputSelectedNumberOfCardsContainer {
+    text-align: left;
+    margin-left: -10px;
+}
+
+.container_formAddCard select#selected_numberOfCards,
+.container_formAddCard select#selected_numberOfCardsFoil,
+.container_formAddCard select#selected_numberOfCardsIsInDeck {
+    /*width: 230px;*/
+    width: 84px;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: var(--colorGrayLight);
+}
+
+#foilQuantityDropdown,
+#isInDeckQuantityDropdown {
+    position: absolute;
+    left:310px;
+    margin-top: -48px;
+}
+#foilPriceInput{
+    position: absolute;
+    left:410px;
+    margin-top: -54px;
+}
+
+
+#foilPriceInput > input {
+    width: 130px !important;
+}
+/*card exist message*/
+#showIfCardExistsMessage{
+    font-size:12px;
+    color: var(--colorMTGLight);
+    display: inline-block;
+    position: absolute;
+    right:25px;
+    margin-top: 20px;
+}
+
+/*input#checkboxIsInDeck,*/
+.container_addCard input#checkboxIsFoil {
+    margin-left: 12px;
+    margin-right: 6px;
+}
+
+/*custom checkboxen voor isFoil & isInDeck -----*/
+.container_addCard div.checkboxSpecialLayout {
+    margin-left: 100px;
+}
+
+.container_addCard .checkboxSpecialLayout {
+    width: 120px;
+    height: 40px;
+    border-radius: 50px;
+    position: relative;
+}
+
+.container_addCard .checkboxSpecialLayout span {
+    color: var(--colorGrayLight);
+    display: inline-block;
+    margin-top: 8px;
+    margin-left: -86px;
+}
+
+/**
+ * Create the line for the circle to move across
+ */
+.container_addCard .checkboxSpecialLayout:before {
+    content: '';
+    position: absolute;
+    top: 19px;
+    left: 14px;
+    height: 2px;
+    width: 90px;
+    background: var(--lightOpacityLight);
+}
+
+/**
+ * Create the circle to click
+ */
+.container_addCard .checkboxSpecialLayout label {
+    display: block;
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    transition: all .5s ease;
+    cursor: pointer;
+    position: absolute;
+    top: 9px;
+    z-index: 1;
+    left: 12px;
+    background: #444;
+}
+
+/**
+ * Create the click event for the checkbox
+ */
+.container_addCard .checkboxSpecialLayout input[type=checkbox]:checked + label {
+    left: 84px;
+    background: var(--colorMTGLight);
+}
+
+.container_addCard input#submit_addCard {
+    /*text-align: center;*/
+    /*height: 39px;*/
+    /*border: 1px solid var(--colorMTGLight);*/
+    /*background-color: var(--darkOpacity) !important;*/
+
+}
+.container_addCard input#submit_addCard:hover {
+
+}
+.toggleColor_MTGDark {
+    color: var(--colorMTGDark) !important;
+}
+
+.container_addCard #submitAddCard {
+    margin-left: -25px;
+    margin-right: -25px;
+    margin-top: 14px;
+}
+
+.container_addCard #submitAddCard input {
+    text-align: center;
+    height: 39px;
+    color: var(--colorMTGDark) !important;
+    border: 1px solid var(--colorMTGDark);
+    background-color: var(--darkOpacity) !important;
+    border-radius: 3px !important;
+}
+
+.container_addCard #submitAddCard input:hover {
+    cursor: pointer;
+    text-align: center;
+    color: var(--colorMTGLight) !important;
+    border: 1px solid var(--colorMTGLight) !important;
+    background-color: var(--darkOpacityDark) !important;
+    border-radius: 3px !important;
+}
+
+
+
+
+
+
+

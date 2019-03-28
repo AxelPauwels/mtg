@@ -1,0 +1,48 @@
+WORKFLOW:
+-------------------------------------------------------------------------------
+[master] git pull
+[master] git checkout development
+    [development] git merge master
+    [development] git push
+    [development] git checkout -b feature/MOV-x
+        [feature/MOV-x] * working on issues/feature *
+        [feature/MOV-x] git merge development (to fix merge conflicts)
+        [feature/MOV-x] git push
+        [feature/MOV-x] git checkout development
+    [development] git merge feature/MOV-x
+    [development] * testing *
+    [development] git merge master (to fix merge conflicts)
+    [development] git push
+    [development] git checkout master
+[master] git merge development
+[master] git push
+[master] git tag -a "vx.x" -m "Version x - my_message"
+[master] git push --tags
+
+
+
+USED BRANCHES (checked out from development):
+-------------------------------------------------------------------------------
+feature/MOV-x       -> to add a new feature
+bugfix/MOV-x        -> to fix minor/urgent errors
+refactor/MOV-x	    -> to clean/refactor code
+
+
+
+BRANCH NAMES:
+-------------------------------------------------------------------------------
+start with MOV-X (where X is a number)
+followed by "-Short-explanation-of-the-feature"
+
+example: [development] git checkout -b feature/MOV-5-Adding-form-validation
+
+
+
+COMMIT MESSAGES:
+-------------------------------------------------------------------------------
+start with MOV-X (where X is a number)
+followed by a space
+followed by a verb (Adding, Updating, Deleting,)
+followed by a short description
+
+example: [development] git commit -m "MOV-5 Adding number validation to form"

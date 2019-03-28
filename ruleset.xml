@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<ruleset name="Custom">
+    <description>PSR-2 standards</description>
+    <!-- include the whole PSR-2 standard -->
+
+    <rule ref="PSR2"/>
+</ruleset>

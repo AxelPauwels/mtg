@@ -1,0 +1,109 @@
+# APPLICATION
+#-------------------------
+application/cache/*
+!application/cache/index.html
+
+application/logs/*
+!application/logs/index.html
+
+!application/*/.htaccess
+
+application/config/database.php
+application/config/config.php
+
+assets/images/comedy
+assets/images/episodes
+assets/images/films
+
+
+
+# OS-SPECIFIC
+#-------------------------
+.DS_Store
+
+
+
+# VAGRANT STUFF
+#-------------------------
+acceptance_config.yml
+boxes/*
+/.vagrant
+/website/.vagrant
+/website/build
+/vagrant-spec.config.rb
+test/vagrant-spec/.vagrant/
+
+
+
+# CODEIGNITER USER_GUIDE 
+#-------------------------
+user_guide_src/build/*
+user_guide_src/cilexer/build/*
+user_guide_src/cilexer/dist/*
+user_guide_src/cilexer/pycilexer.egg-info/*
+/vendor/
+
+
+
+# COMPOSER 
+#-------------------------
+composer.lock
+
+
+
+# IDE Files
+#-------------------------
+/nbproject/
+.idea/*
+*.iml
+
+
+
+# PUPHPET
+#-------------------------
+puphpet/config-custom.yaml
+
+
+
+# GRUMPHP
+#-------------------------
+bin
+!bin/grumphp
+vendor
+grumphp.yml
+
+
+
+# RUBY MANAGERS
+#-------------------------
+.rbenv
+.rbenv-gemsets
+.ruby-gemset
+.ruby-version
+.rvmrc
+
+
+
+# SUBLIME TEXT CACHE files
+#-------------------------
+*.tmlanguage.cache
+*.tmPreferences.cache
+*.stTheme.cache
+*.sublime-workspace
+*.sublime-project
+/tests/tests/
+/tests/results/
+
+
+
+# BUNDLER/RUBYGEMS
+#-------------------------
+*.gem
+.bundle
+pkg/*
+tags
+/Gemfile.lock
+test/tmp/
+vendor/
+/exec
+.ruby-bundle
