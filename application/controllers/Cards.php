@@ -501,6 +501,9 @@ class Cards extends CI_Controller
 
     public function ajaxUpdateCard()
     {
+    	// TODO
+    	return;
+
         $updateCard = new stdClass();
         $updateCard->id = $this->input->post('cardId');
         $updateCard->price = $this->input->post('selected_price');
