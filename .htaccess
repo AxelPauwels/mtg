@@ -1,20 +1,20 @@
-<IfModule mod_rewrite.c>
-RewriteEngine On
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
 #RewriteCond %{SERVER_PORT} 80
 #RewriteRule ^(.*)$ https://mtg.sepagon.be/$1 [R,L]
-</IfModule>
-
-#-------------------------
-#disable index.php in url:
-#-------------------------
-#find the below code in config.php file.
-#$config['index_page'] = "index.php"
-#replace with the below code
-#$config['index_page'] = ""
-
-<IfModule mod_rewrite.c>
-RewriteEngine On
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php/$1 [L]
-</IfModule>
+#</IfModule>
+#
+##-------------------------
+##disable index.php in url:
+##-------------------------
+##find the below code in config.php file.
+##$config['index_page'] = "index.php"
+##replace with the below code
+##$config['index_page'] = ""
+#
+#<IfModule mod_rewrite.c>
+#RewriteEngine On
+#RewriteCond %{REQUEST_FILENAME} !-f
+#RewriteCond %{REQUEST_FILENAME} !-d
+#RewriteRule ^(.*)$ index.php/$1 [L]
+#</IfModule>
